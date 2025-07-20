@@ -1,7 +1,7 @@
 function FindDistance(p1, p2) {
   let sum = 0;
   for (let i = 0; i < p1.length; i++) {
-    sum += (p1[i] - p2[i]) ** 2;
+    sum =sum + (p1[i] - p2[i]) ** 2;
   }
   return Math.sqrt(sum);
 }
@@ -49,8 +49,8 @@ function findCentroids(data, assignedCentroids, k) {
   return centroids;
 }
 
-export default function Kmeans(data, k, maxIterations = 100) {
-  const centroids = data.slice(0, k).map(point => [...point]); // deep copy
+ function Kmeans(data, k, maxIterations = 100) {
+  const centroids = data.slice(0, k); 
   let assignedCentroids = [];
 
   for (let i = 0; i < maxIterations; i++) {
@@ -74,3 +74,5 @@ export default function Kmeans(data, k, maxIterations = 100) {
 
   return { centroids, assignedCentroids };
 }
+
+module.exports =   Kmeans;

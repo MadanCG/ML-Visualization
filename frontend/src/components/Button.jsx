@@ -1,5 +1,5 @@
-import React from "react";
 import asset from "../constants/assets";
+
 
 export default function Button({ label, onClick }) {
   return (
